@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadpool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:ital, wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS untuk background atas */
+        .top-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #ff0000; /* Warna untuk background atas */
+            z-index: -1;
+        }
+
+        /* CSS untuk background bawah */
+        .bottom-background {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #000000; /* Warna untuk background bawah */
+            z-index: -1;
+        }
+
+        /* CSS untuk h1 */
+        h1 {
+            font-weight: bold;
+        }
+
+        /* CSS untuk gambar di bawah tombol */
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 120px; /* Lebar gambar */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Posisi tengah gambar */
+            border-radius: 15px; /* Mengubah sudut gambar */
+        }
+
+        /* CSS untuk tombol di bawah gambar */
+        .yt-button {
+            margin-top: 10px; /* Jarak antara gambar dan tombol */
+            background-color: rgb(255, 0, 0); /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+            padding: 8px 15px; /* Padding tombol */
+            border: none; /* Hilangkan border */
+            border-radius: 10px; /* Border radius */
+            cursor: pointer; /* Ubah kursor menjadi pointer saat dihover */
+            font-size: 14px; /* Ukuran font tombol */
+        }
+
+        .yt-button:hover {
+            background-color: white; /* Warna latar belakang tombol saat dihover */
+            color: rgb(255, 0, 0); /* Warna teks tombol saat dihover */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-background"></div>
+    <div class="bottom-background"></div>
+
+    <div class="Notes">
+        <h1 class="poppins-medium">deadpool</h1>
+        <div class="image-center">
+            <img class="gambar" id="gambar" src="aset/logo.png" alt="Gambar" width="100%" style="border-radius: 10px;">
+        </div>
+
+        <div class="poppins-regular deskripsi">Deskription:</div>
+        <ul class="deskripsi">
+            <p>Deadpool adalah karakter anti-pahlawan<p>
+            <p>Dikenal karena gaya bertarung yang konyol</p>
+            <p>Memiliki kekuatan sebagai mutan</p>
+        </ul>
+        <br>
+        <button style="cursor: pointer;" onclick="gantiGambar()">press the surprise </button>
+
+        <!-- Tombol dan gambar di bawah tombol -->
+        <div class="image-container">
+            <a href="https://youtu.be/QX8XdRoaLoQ?si=z_056XICX5oIuGsL" target="_blank">
+                <img src="aset/image2.png" alt="YouTube">
+            </a>
+            <br>
+            <button class="yt-button" onclick="redirectToYouTube()">Watch trailer on YouTube</button>
+            <p class="txt-waktu" id="hasil"></p>
+        </div>
+    </div>
+
+    <script>
+        tanggal = new Date();
+        document.getElementById("hasil").innerHTML = tanggal
+
+        function gantiGambar() {
+            var gambar = document.getElementById('gambar');
+            var deskripsi = document.querySelectorAll('.deskripsi');
+            var loveYou = document.createElement('p'); // Buat elemen <p> baru untuk teks "love you"
+            loveYou.textContent = "❤️‍🔥love you❤️‍🔥"; // Atur teks "love you"
+            loveYou.classList.add('love-you'); // Tambahkan kelas untuk styling
+            var loveYouExist = document.querySelector('.love-you')
+
+            // Toggle untuk setiap elemen deskripsi
+            deskripsi.forEach(element => {
+                if (element.style.display !== 'none') {
+                    element.style.display = 'none';
+                } else {
+                    element.style.display = 'block';
+                }
+            });
+
+            // Ganti gambar
+            if (gambar.src.endsWith('aset/logo.png')) {
+                gambar.src = 'aset/image1.png';
+            } else {
+                gambar.src = 'aset/logo.png';
+            }
+            if (loveYouExist) {
+                loveYouExist.remove();
+            } else {
+                // Tambahkan teks "love you" setelah gambar
+                gambar.parentNode.appendChild(loveYou);
+            }
+        }
+
+        function redirectToYouTube() {
+            window.location.href = "https://youtu.be/QX8XdRoaLoQ?si=z_056XICX5oIuGsL";
+        }
+    </script>
+</body>
+</html>

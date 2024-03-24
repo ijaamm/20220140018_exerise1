@@ -1,0 +1,115 @@
+body {
+    font-family: "Poppins", sans-serif;
+    height: 70vh;
+    background-color: black; /* Mengubah latar belakang menjadi warna hitam */
+    color: white; /* Mengubah warna teks menjadi putih */
+    
+}
+
+@keyframes shadow-animation {
+    0% {
+        box-shadow: 0px 0px 20px rgb(255, 255, 255); /* Shadow lebih merah */
+    }
+    50% {
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7); /* Shadow lebih gelap */
+    }
+    100% {
+        box-shadow: 0px 0px 20px rgb(255, 255, 255); /* Shadow kembali ke warna awal */
+    }
+}
+
+
+.Notes {
+    position: absolute;
+    background-color: #ffffff; 
+    width: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Initial shadow */
+    text-align: center;
+    padding: 20px 40px 0 40px;
+    animation: shadow-animation 1s infinite; /* Berjalan selama 3 detik secara terus menerus */
+    background-image: url("aset/image.png"); /* Ganti gambar latar belakang */
+    background-size: cover; /* Menyesuaikan ukuran gambar dengan kotak elemen */
+    background-position: center; /* Posisikan gambar di tengah */
+    border: 2px solid transparent; /* Menghilangkan border */
+    color: rgb(0, 0, 0); /* Mengubah warna teks menjadi putih */
+}
+
+.txt-waktu {
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white; /* Mengubah warna teks menjadi putih */
+}
+
+.image-center img {
+    width: 50%;
+    height: auto;
+    border-radius: 25px;
+}
+
+button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(255, 0, 0); /* Mengubah warna latar belakang tombol menjadi biru */
+    color: white; /* Mengubah warna teks tombol menjadi putih */
+    transition: background-color 0.3s; /* Animasi perubahan warna latar belakang tombol */
+}
+
+button:active {
+    background-color: white; /* Mengubah warna latar belakang tombol menjadi putih saat tombol ditekan */
+    color: rgb(255, 0, 0); /* Mengubah warna teks tombol menjadi biru saat tombol ditekan */
+}
+
+.love-you {
+    color: white; /* Mengatur warna teks "love you" */
+    text-shadow: 0 0 5px red, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000, 0 0 35px #ff0000; /* Mengatur efek siluet merah pada teks "love you" */
+}
+@keyframes blink {
+    0% {
+        opacity: 0; /* Mulai dengan keadaan tidak terlihat */
+    }
+    50% {
+        opacity: 1; /* Tampilkan teks pada separuh durasi */
+    }
+    100% {
+        opacity: 0; /* Kembali menjadi tidak terlihat pada akhir durasi */
+    }
+}
+
+.love-you {
+    color: white; /* Mengatur warna teks "love you" */
+    text-shadow: 0 0 5px red, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000, 0 0 35px #ff0000; /* Mengatur efek siluet merah pada teks "love you" */
+    animation: blink 1s infinite; /* Mengatur animasi berkelap-kelip */
+}
+.yt-button {
+    margin-top: 10px; /* Jarak antara gambar dan tombol */
+    background-color: rgb(255, 0, 0); /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    padding: 8px 15px; /* Padding tombol yang lebih kecil */
+    border: none; /* Hilangkan border */
+    border-radius: 5px; /* Border radius yang lebih kecil */
+    cursor: pointer; /* Ubah kursor menjadi pointer saat dihover */
+    font-size: 14px; /* Ukuran font tombol */
+    text-decoration: none; /* Menghapus underline */
+}
